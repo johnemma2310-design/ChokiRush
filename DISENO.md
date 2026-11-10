@@ -1,4 +1,4 @@
-# Documento de diseño – Choki Rush: La Ruta del Profe
+# Documento de diseño – Choki Rush
 
 ## 1. Descripción
 

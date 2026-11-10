@@ -1,4 +1,4 @@
-# Choki Rush – La Ruta del Profe
+# Choki Rush
 
 Juego de carreras arcade con vista desde arriba, en pixel art, hecho en Python con
 Programación Orientada a Objetos. Se juega en el computador **o en el navegador**, con

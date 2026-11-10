@@ -65,10 +65,6 @@ class MenuPrincipal(Escena):
         y = 24 + int(math.sin(t * 2) * 2)
         FUENTE.texto(sup, "CHOKI RUSH", C.ANCHO // 2, y, escala=4, color=C.AMARILLO,
                      sombra=(150, 50, 10), alinear='centro')
-        FUENTE.texto(sup, "LA RUTA DEL PROFE", C.ANCHO // 2, y + 36, color=C.BLANCO, alinear='centro')
-        moneda = self.juego.recursos.escalar(self.juego.recursos.cara_profe, 2)
-        sup.blit(moneda, (14, 56 + int(math.sin(t * 3) * 4)))
-        sup.blit(moneda, (C.ANCHO - 14 - moneda.get_width(), 56 + int(math.sin(t * 3 + 1.5) * 4)))
 
         alto = 12 + len(self._opciones) * 14
         ui.panel(sup, (90, 88, 140, alto))
@@ -81,19 +77,24 @@ class MenuPrincipal(Escena):
             else:
                 FUENTE.texto(sup, op, 160, yy, color=C.GRIS, alinear='centro')
 
+        # el profe señalando el menú, abajo a la derecha
+        profe = self.juego.recursos.profe_senalando(124)
+        if profe is not None:
+            sup.blit(profe, (C.ANCHO - profe.get_width() + 8,
+                             C.ALTO - profe.get_height() + 10 + int(math.sin(t * 2.5) * 2)))
+
         # tu piloto saludando
         p = self.juego.piloto_personalizado
         if p is not None:
             m = self.juego.recursos.escalar(self.juego.recursos.muneco_de(p, int(t * 4) % 2), 2)
-            sup.blit(m, (250 - m.get_width() // 2, 176 - m.get_height() - int(abs(math.sin(t * 5)) * 4)))
-            FUENTE.texto(sup, p.nombre, 250, 180, color=C.VERDE, alinear='centro')
+            sup.blit(m, (46 - m.get_width() // 2, 172 - m.get_height() - int(abs(math.sin(t * 5)) * 4)))
+            FUENTE.texto(sup, p.nombre, 46, 176, color=C.VERDE, alinear='centro')
 
         online = "EN LÍNEA" if self.juego.servicio.disponible else "MODO LOCAL"
-        FUENTE.texto(sup, f"MEJOR LOCAL: {self.juego.records.mejor:06d}", 160, 196,
-                     color=C.CIAN, alinear='centro')
-        FUENTE.texto(sup, "FLECHAS: MOVER   ENTER: ELEGIR", 160, 212, color=C.BLANCO, alinear='centro')
-        ayuda = "M: MÚSICA" if ES_WEB else "M: MÚSICA   F11: PANTALLA COMPLETA"
-        FUENTE.texto(sup, ayuda, 160, 224, color=C.GRIS, alinear='centro')
+        FUENTE.texto(sup, f"MEJOR LOCAL: {self.juego.records.mejor:06d}", 8, 196, color=C.CIAN)
+        FUENTE.texto(sup, "FLECHAS: MOVER  ENTER: ELEGIR", 8, 212, color=C.BLANCO)
+        ayuda = "M: MÚSICA" if ES_WEB else "M: MÚSICA  F11: PANTALLA COMPLETA"
+        FUENTE.texto(sup, ayuda, 8, 224, color=C.GRIS)
         FUENTE.texto(sup, online, 4, 4, color=C.VERDE if self.juego.servicio.disponible else C.GRIS)
 
 

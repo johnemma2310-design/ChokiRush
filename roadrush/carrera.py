@@ -70,7 +70,7 @@ class Carrera(Escena):
             return
         self.juego.avisos_vistos.add(clave)
         self._aviso = DialogoProfe(self.juego.recursos, self.juego.audio, (texto,),
-                                   rect=(4, 172, C.ANCHO_AREA - 8, 62), automatico=True, pausa=2.5)
+                                   rect=(4, 16, C.ANCHO_AREA - 8, 40), automatico=True, pausa=2.5)
 
     def _terminar_tutorial(self):
         self._tutorial = None

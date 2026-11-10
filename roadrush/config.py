@@ -5,7 +5,7 @@ import os
 ANCHO, ALTO = 320, 240
 ANCHO_AREA = 240          # zona de carretera; los 80 px restantes son el HUD
 FPS = 60
-TITULO = "Choki Rush - La Ruta del Profe"
+TITULO = "Choki Rush"
 JUGADOR_Y = 182           # altura fija del auto del jugador en pantalla
 
 # --- Rutas ---

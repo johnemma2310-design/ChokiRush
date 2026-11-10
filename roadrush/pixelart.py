@@ -314,8 +314,9 @@ class Recursos:
             sup = pygame.Surface((ancho, alto), pygame.SRCALPHA)
             sup.blit(pygame.transform.smoothscale(img.convert_alpha(), (ancho, alto)), (0, 0))
             visto = set()
-            cola = deque([(x, y) for x in range(ancho) for y in (0, alto - 1)] +
-                         [(x, y) for y in range(alto) for x in (0, ancho - 1)])
+            # el fondo blanco está arriba y a la izquierda; la camisa (también blanca) toca los
+            # bordes de abajo y derecho, por eso solo se siembra desde arriba y la izquierda
+            cola = deque([(x, 0) for x in range(ancho)] + [(0, y) for y in range(alto)])
             while cola:                                   # borra el blanco conectado al borde
                 x, y = cola.popleft()
                 if not (0 <= x < ancho and 0 <= y < alto) or (x, y) in visto:
