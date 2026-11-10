@@ -15,7 +15,6 @@ def _normalizar(valor, minimo, maximo):
 
 @dataclass(frozen=True)
 class Personaje:
-    """Datos inmutables de un piloto (frozen = nadie puede alterarlos durante la partida)."""
     nombre: str
     apodo: str
     descripcion: str
@@ -109,20 +108,20 @@ class PersonajePersonalizado(Personaje):
 
 
 PERSONAJES = (
-    Personaje("LÍA CENTELLA", "LA FLECHA ROJA",
-              "La más rápida en recta, pero gira como un camión de mudanza.",
+    Personaje("Rojolio", "LA FLECHA ROJA",
+              "Lo más rápido en recta, pero gira re-lento.",
               (226, 52, 52), (255, 230, 90), (226, 52, 52), (255, 210, 80),
               velocidad_max=305, aceleracion=150, manejo=118, eficiencia=1.05),
-    Personaje("BRUNO TUERCA", "EL MECÁNICO",
-              "Equilibrado en todo. Ideal para aprender la ruta.",
+    Personaje("Brunichi", "EL Man de Azul",
+              "Equilibrado en todo.",
               (40, 176, 200), (240, 240, 240), (40, 176, 200), (60, 60, 80),
               velocidad_max=278, aceleracion=170, manejo=150, eficiencia=1.0),
-    Personaje("SOFI VERDE", "LA ECOLÓGICA",
+    Personaje("Doña Verde", "LA ECOLÓGICA",
               "Su motor híbrido gasta muchísimo menos gasolina.",
               (70, 190, 90), (250, 250, 210), (70, 190, 90), (120, 230, 255),
               velocidad_max=262, aceleracion=155, manejo=148, eficiencia=0.72),
-    Personaje("MAX DRIFT", "EL GATO",
-              "Ágil como un gato: acelera y gira de maravilla, pero tiene sed.",
+    Personaje("Ediso", "EL GATO",
+              "Hola Ediso.",
               (156, 84, 226), (255, 150, 220), (156, 84, 226), (255, 150, 220),
               velocidad_max=270, aceleracion=205, manejo=186, eficiencia=1.22),
 )
