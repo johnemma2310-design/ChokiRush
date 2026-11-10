@@ -1,0 +1,25 @@
+{
+ "efectos": [
+  "moneda",
+  "gasolina",
+  "escudo",
+  "choque",
+  "derrape",
+  "cuenta",
+  "ya",
+  "mover",
+  "voz",
+  "ok",
+  "alarma",
+  "destruir"
+ ],
+ "jingles": [
+  "victoria",
+  "perder",
+  "nivel"
+ ],
+ "musicas": [
+  "menu",
+  "carrera"
+ ]
+}

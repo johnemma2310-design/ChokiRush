@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choki Rush – La Ruta del Profe</title>
+<link rel="icon" href="/juego/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root { --amarillo:#ffd640; --verde:#5ae06e; --cian:#5adcf5; --gris:#8c8c9e; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; background:radial-gradient(ellipse at top,#2a2156 0%,#120f24 65%); color:#f5f5f5;
+    font-family:'Press Start 2P',monospace; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:28px; padding:24px 16px; text-align:center; }
+  h1 { margin:0; font-size:clamp(28px,7vw,72px); color:var(--amarillo); text-shadow:5px 5px 0 #962d0a; }
+  p { margin:0; color:var(--gris); font-size:clamp(9px,1.6vw,14px); line-height:2; max-width:640px; }
+  #munecos { image-rendering:pixelated; max-width:100%; }
+  .botones { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
+  a.boton { font-size:clamp(12px,2vw,18px); text-decoration:none; padding:18px 26px; border:4px solid; color:#111; }
+  a.jugar { background:var(--amarillo); border-color:#fff3b0; box-shadow:0 6px 0 #a8801a; }
+  a.podio { background:var(--cian); border-color:#c8f4ff; box-shadow:0 6px 0 #2a8aa0; }
+  a.boton:active { transform:translateY(4px); box-shadow:none; }
+  .ayuda { font-size:clamp(8px,1.2vw,11px); color:var(--gris); line-height:2.2; }
+  .ayuda b { color:var(--verde); }
+</style>
+</head>
+<body>
+  <h1>CHOKI RUSH</h1>
+  <p>LA RUTA DEL PROFE · CREA TU PILOTO CON TU FOTO, ESQUIVA EL TRAFICO, ATRAPA LAS CARAS DEL PROFE Y LLEGA AL TOP 5.</p>
+  <canvas id="munecos" width="420" height="150"></canvas>
+  <div class="botones">
+    <a class="boton jugar" href="/juego/">▶ JUGAR</a>
+    <a class="boton podio" href="/podio.html">🏆 PODIO EN VIVO</a>
+  </div>
+  <div class="ayuda">
+    <b>FLECHAS</b> CONDUCIR · <b>ENTER</b> ACEPTAR · <b>P</b> PAUSA · <b>M</b> MUSICA<br>
+    SE JUEGA CON TECLADO (COMPUTADOR). LA PRIMERA CARGA TARDA UNOS SEGUNDOS.
+  </div>
+<script type="module">
+import { dibujarMuneco } from '/muneco.js';
+const cv = document.getElementById('munecos');
+const ctx = cv.getContext('2d');
+const colores = ['#e23434', '#28b0c8', '#46be5a', '#9c54e2', '#ff9632'];
+function cuadro(t) {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  colores.forEach((c, i) => {
+    const y = 20 + Math.abs(Math.sin(t / 200 + i)) * -12 + 12;
+    dibujarMuneco(ctx, { color: c }, 12 + i * 82, Math.round(y), 4, Math.floor(t / 220 + i) % 2);
+  });
+  requestAnimationFrame(cuadro);
+}
+requestAnimationFrame(cuadro);
+</script>
+</body>
+</html>

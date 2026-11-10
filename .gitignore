@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Compilación temporal de pygbag (el juego web listo está en web/juego/)
+build/
+
+# Datos locales del jugador
+datos_usuario.json
+records.json
+
+# Vercel: tokens y configuración local (¡nunca subirlos!)
+web/.vercel/
+web/.env*
+.env*
+node_modules/
+
+# Configuración local del editor / asistente
+.claude/

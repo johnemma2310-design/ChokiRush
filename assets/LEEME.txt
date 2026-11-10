@@ -1,0 +1,3 @@
+Pon aquí la foto del profesor con el nombre: profesor.png  (o profesor.jpg)
+El juego la recorta, la reduce y la convierte en pixel art automáticamente
+para usarla en las monedas de puntos.
