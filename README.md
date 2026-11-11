@@ -1,4 +1,5 @@
 # Choki Rush
+*John Emmanuel López Esquivel*
 
 Juego de carreras arcade con vista desde arriba, en pixel art, hecho en Python con
 Programación Orientada a Objetos. Se juega en el computador **o en el navegador**, con
@@ -38,10 +39,6 @@ python main.py
 - **Podio proyectable**: página web tipo Kahoot que se actualiza sola cada 3 s, con código QR para entrar
   y filtro "ESTA CLASE" (últimas 3 horas).
 
-## La cara del profe 😎
-
-Guarda una foto del profesor como `assets/profesor.png` (o `.jpg`) y vuelve a construir el juego:
-las monedas de puntos usarán su cara pixelada.
 
 ## Estructura
 
@@ -84,11 +81,11 @@ vercel deploy --prod
 ```
 
 La base de datos es Postgres en Neon (proyecto `road-rush`); la conexión está en la variable de
-entorno `DATABASE_URL` del proyecto de Vercel (no está en el código).
+entorno `DATABASE_URL` del proyecto de Vercel (no está en el código).  *CLARAMENTE NO COMPARTI LAS APIS DE EL PROYECTO*
 
 ## Recursos externos
 
 - **pygame-ce** (LGPL) para el juego y **pygbag** (MIT) para compilarlo a WebAssembly.
 - **@neondatabase/serverless** para la API, **Vercel** (hosting) y **Neon** (base de datos).
 - Fuente "Press Start 2P" (Google Fonts, OFL) y qrcodejs (MIT) solo en las páginas web.
-- Gráficos, fuente del juego, música y efectos: originales, generados por código.
+- Gráficos, fuente del juego, música y efectos: originales, generados por código. (CLAUDE)
