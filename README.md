@@ -35,10 +35,8 @@ python main.py
   velocidad, aceleración, manejo y economía.
 - **Dificultad**: Fácil (puntos ×0.75), Normal (×1) y Difícil (×1.5).
 - **Clasificación en línea**: al terminar escribes tu nombre y tu puntaje sube a la base de datos.
-  El top 5 se muestra en un podio con los muñecos animados (el 1.º salta con corona).
-- **Podio proyectable**: página web tipo Kahoot que se actualiza sola cada 3 s, con código QR para entrar
-  y filtro "ESTA CLASE" (últimas 3 horas).
-
+  El top 5 se muestra en un podio con los muñecos animados
+- **Podio proyectable**
 
 ## Estructura
 
